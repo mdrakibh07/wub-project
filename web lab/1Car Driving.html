@@ -1,0 +1,155 @@
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Car Driving</title>
+<script src="./1Car Driving_files/jquery-2.2.4.min.js.download" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<style>
+body{padding: 0; margin:0; background: rgb(40, 39, 39); overflow: hidden;}
+.car{
+    width: 100px;
+    position: absolute;
+    bottom:10%;
+    left:45%;
+    z-index: 999;
+}
+
+#contol{
+position: fixed;
+z-index: 2000;
+}
+#contol input{
+    background: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+#contol input:active{
+    background-color: rgb(254, 112, 112);
+}
+
+#road{
+    height: 100%;
+    width: 100%;
+    background-image:url('road.jpg');
+    background-size: cover;
+}
+
+.anime{
+    animation: move 4s linear infinite;
+}
+
+       @keyframes move {
+				from {
+					background-position-y: 100%;
+				}
+
+				to {
+					background-position-y: 0%;
+				}
+}
+</style>
+<script>
+    $(document).ready(function(){
+    let car=$("#car");
+
+  $(document).mouseup(function(){
+    setTimeout(function(){
+    car.css('transform','rotate(0deg)');
+    $('#road').addClass('anime');
+    },55);
+  
+   });
+
+   $(document).keyup(function(){
+    car.css('transform','rotate(0deg)');
+    $('#road').addClass('anime');
+   });
+
+$("#left").click(function(){
+    car.css('transform','rotate(-10deg)');
+        car.animate({
+            left: "-=10",
+        },50);
+});
+
+$('#up').click(function(){
+    car.animate({
+            top: "-=10"
+        }, 50);
+});
+
+$("#right").click(function(){
+    car.css('transform','rotate(10deg)');
+        car.animate({
+            left: "+=10"
+        },50);
+});
+
+$("#down").click(function(){
+    $('#road').removeClass('anime');
+        car.animate({
+            top: "+=10"
+        }, 50);
+});
+
+    $(document).keydown(function (e) {
+
+    if (e.which == 37) 
+        $("#left").click();
+    else if (e.which == 38) 
+        $('#up').click();
+     else if (e.which == 39) 
+        $("#right").click();
+
+    else if (e.which == 40) 
+    $("#down").click();
+    
+});
+
+});
+</script>
+<style type="text/css">
+@font-face {
+  font-weight: 400;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 500;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 700;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 900;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Black.woff2') format('woff2');
+}</style></head>
+    <body data-new-gr-c-s-check-loaded="14.1086.0" data-gr-ext-installed="" cz-shortcut-listen="true">
+        <img id="car" class="car" src="./1Car Driving_files/car.png" style="transform: rotate(0deg);">
+             <div id="contol">
+                <input id="up" type="submit" value="UP">
+                <input id="down" type="submit" value="DOWN">
+                <input id="left" type="submit" value="LEFT">
+                <input id="right" type="submit" value="RIGHt"><br><br>
+                <span style="background: rgb(246, 255, 68);">Or use the keyboard arrow keys.</span>
+            </div>
+            <div id="road" class="anime"></div>
+    
+<link rel="stylesheet" type="text/css" href="chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/css/blur.css" class="loom-blur-styles"></body><loom-container id="lo-engage-ext-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><loom-container id="lo-companion-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
