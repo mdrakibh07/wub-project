@@ -1,0 +1,42 @@
+
+<html>
+    <head>
+        <title>Sandwiche Builder</title>
+        <script>
+       function  sandwiches(bread,cheese){
+       var total=0;
+      var pb=Math.floor(bread/2);
+
+      if(cheese>=pb)
+       total=pb;
+       else
+       total=cheese;
+
+       return total;
+       }
+
+       function result(){
+        let bread=document.getElementById('bread').value;
+        let cheese=document.getElementById('cheese').value;
+        
+        document.getElementById('result').innerText=`Total Sandwiches: ${sandwiches(bread,cheese)}`;
+       }
+        </script>
+    </head>
+    <body>
+    <h3>Sandwiche Builder</h3>
+    <table border="0">
+        <tr>
+            <td><label for="bread">Bread</label></td>
+            <td><input type="number" onchange="result()" onkeyup="result()" min="0" value="0" id="bread" placeholder="Bread"></td>
+        </tr>
+        <tr>
+            <td><label for="cheese">Cheese</label></td>
+            <td><input type="number" onkeyup="result()" onchange="result()" value="0" min="0" id="cheese" placeholder="Cheese"></td>
+        </tr>
+    </table>
+    <br>
+     <p id="result"></p>
+    
+    </body>
+</html>

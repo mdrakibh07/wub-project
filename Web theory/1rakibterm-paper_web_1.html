@@ -1,0 +1,63 @@
+
+<html>
+    <head>
+        <title>WUB University Age calculator</title>
+        <script>
+    function  age(input){
+           let inputDate=new Date(input);
+
+            var date = new Date();
+
+            if(date<=inputDate)
+            return "Please select a past date.";
+
+            var d1 = inputDate.getDate();
+      var m1 = inputDate.getMonth();
+      var y1 = inputDate.getFullYear();
+
+      var d2 = date.getDate();
+      var m2 =  date.getMonth();
+      var y2 = date.getFullYear();
+      var month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+      if(d1 > d2){
+        d2 = d2 + month[m2 - 1];
+        m2 = m2 - 1;
+      }
+      if(m1 > m2){
+        m2 = m2 + 12;
+        y2 = y2 - 1;
+      }
+      var d = d2 - d1;
+      var m = m2 - m1;
+      var y = y2 - y1;
+
+            var array=[];
+            if(y) array.push(y+" Years");
+            if(m) array.push(m+" Months");
+            if(d) array.push(d+" Days");
+
+            return array.join(', ');
+        }
+
+        function putToOutput(){
+          var stringResult=age(document.getElementById('date').value);
+           if(stringResult)
+           document.getElementById('result').innerText= `Age: ${stringResult}.`;
+           else
+           document.getElementById('result').innerText= "";
+        }
+
+        window.onload=function(){
+        putToOutput();
+        document.getElementById('date').addEventListener('change',putToOutput);
+        }
+        </script>
+    </head>
+    <body>
+        <label for="date">WUB establishment data: </label>
+        <input type="date" id="date" value="2003-02-26">
+        <br>
+        <h1 style="color:red" id="result"></h1>
+    </body>
+</html>

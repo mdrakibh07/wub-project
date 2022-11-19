@@ -1,7 +1,8 @@
 
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<html>
+<head>
 <title>Car Driving</title>
-<script src="./1Car Driving_files/jquery-2.2.4.min.js.download" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
 <style>
 body{padding: 0; margin:0; background: rgb(40, 39, 39); overflow: hidden;}
 .car{
@@ -40,13 +41,13 @@ z-index: 2000;
 }
 
        @keyframes move {
-				from {
-					background-position-y: 100%;
-				}
+                from {
+                    background-position-y: 100%;
+                }
 
-				to {
-					background-position-y: 0%;
-				}
+                to {
+                    background-position-y: 0%;
+                }
 }
 </style>
 <script>
@@ -109,40 +110,9 @@ $("#down").click(function(){
 
 });
 </script>
-<style type="text/css">
-@font-face {
-  font-weight: 400;
-  font-style:  normal;
-  font-family: 'Circular-Loom';
-
-  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2') format('woff2');
-}
-
-@font-face {
-  font-weight: 500;
-  font-style:  normal;
-  font-family: 'Circular-Loom';
-
-  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Medium.woff2') format('woff2');
-}
-
-@font-face {
-  font-weight: 700;
-  font-style:  normal;
-  font-family: 'Circular-Loom';
-
-  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2') format('woff2');
-}
-
-@font-face {
-  font-weight: 900;
-  font-style:  normal;
-  font-family: 'Circular-Loom';
-
-  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Black.woff2') format('woff2');
-}</style></head>
-    <body data-new-gr-c-s-check-loaded="14.1086.0" data-gr-ext-installed="" cz-shortcut-listen="true">
-        <img id="car" class="car" src="./1Car Driving_files/car.png" style="transform: rotate(0deg);">
+</head>
+    <body>
+        <img id="car" class="car" src="car.png" />
              <div id="contol">
                 <input id="up" type="submit" value="UP">
                 <input id="down" type="submit" value="DOWN">
@@ -151,5 +121,5 @@ $("#down").click(function(){
                 <span style="background: rgb(246, 255, 68);">Or use the keyboard arrow keys.</span>
             </div>
             <div id="road" class="anime"></div>
-    
-<link rel="stylesheet" type="text/css" href="chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/css/blur.css" class="loom-blur-styles"></body><loom-container id="lo-engage-ext-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><loom-container id="lo-companion-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
+    </body>
+</html>

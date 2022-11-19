@@ -1,0 +1,54 @@
+
+<html>
+    <head>
+        <title>Student</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+    </head>
+    <body>
+      <h3>Student List</h3>  
+  <div id="studentList"></div>
+
+    <script>
+            function Student(fullName,batch,earnedCredits,totalCreditHours,cGpa){
+              this.fullName=fullName;
+              this.batch=batch;
+              this.earnedCredits=earnedCredits;
+              this.totalCreditHours=totalCreditHours;
+              this.cGpa=cGpa;
+            }
+
+            Student.prototype.show=function(){
+                swal(`Name: ${this.fullName}
+                Batch: ${this.batch}
+                Earned Credits: ${this.earnedCredits}
+                Total credit hours attempted: ${this.totalCreditHours}
+                Cumulative GPA: ${this.cGpa}`);
+            }
+
+
+      let students=[
+      new Student("Mehedi Hasan","50C",72,"270 Hours","3.67"),
+      new Student("Abdullah","50C",72,"270 Hours","3.71"),
+      new Student("Rakib","50A",68,"240 Hours","3.18"),
+      new Student("Shakil","50B",65,"250 Hours","3.23"),
+      new Student("Nafisha Sultana Elme",72,"50C","270 Hours","3.32"),
+      new Student("Shohid Babu","50B",68,"275 Hours","3.70"),
+      new Student("Limon Ahmed","50B",60,"270 Hours","3.61"),
+      new Student("Farukh Akond","50A",62,"280 Hours","3.19"),
+      new Student("Towhedul Islam","50D",72,"230 Hours","3.12"),
+      new Student("Rahad","50C",63,"248 Hours","3.19"),
+     ];
+
+
+let ele=document.getElementById('studentList');  
+
+students.forEach((studentObj,i)=>{
+    ele.innerHTML+=`<label>
+   <input type="radio" name="student" onclick="students[${i}].show()">
+    ${studentObj.fullName}
+    </label><br>`;
+});
+    </script>
+
+    </body>
+</html>
